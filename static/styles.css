@@ -1,0 +1,163 @@
+@font-face {
+    font-family: "Cubex";
+    src: url("../cubex/Cubex.woff") format("woff"),
+    url("../cubex/Cubex.ttf") format("truetype");
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #F2AD94;
+}
+
+#background {
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/noisy-background.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    opacity: 15%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 55px;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: #A17362;
+    color: transparent;
+    text-shadow: 0px 2px 3px rgba(242,173,148,0.8); /* color: #F2AD94; */
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
+.navbar a {
+    font-size: 20px;
+    color: #fbf9fa;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #331C14;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.home-content {
+    background-color: #00000010;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(25px);
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 48px;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #fbf9fa;
+    line-height: 1.2;
+}
+
+.home-content h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #331C14;
+}
+
+.home-content p {
+    color: #66473C;
+    font-size: 18px;
+    margin: 15px 0 25px;
+}
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #331C14;
+    border: 2px solid #331C14;
+    border-radius: 25px;
+    font-size: 20px;
+    color: #fbf9fa;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.btn-box a:hover {
+    color: #331C14;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #331C14;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #fbf9fa;
+}
+
+.btn-box a:nth-child(2)::before {
+    background: #331C14;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #E3A28A;
+    z-index: -1;
+    transition: .4s;
+}
+
+.btn-box a:hover:before {
+    width: 100%;
+}
