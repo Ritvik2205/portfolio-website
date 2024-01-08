@@ -42,6 +42,7 @@ body {
 }
 
 .logo {
+    position: relative;
     font-size: 55px;
     text-decoration: none;
     font-weight: 600;
@@ -51,6 +52,18 @@ body {
     -webkit-background-clip: text;
        -moz-background-clip: text;
             background-clip: text;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #F2AD94;
+    animation: showRight 1s ease forwards;
+    animation-delay: .3s;
 }
 
 .navbar a {
@@ -85,29 +98,82 @@ body {
 }
 
 .home-content h1 {
+    position: relative;
     font-size: 56px;
     font-weight: 700;
     color: #fbf9fa;
     line-height: 1.2;
 }
 
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #E3A28A;
+    animation: showRight 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
 .home-content h3 {
+    position: relative;
     font-size: 36px;
     font-weight: 700;
     color: #331C14;
 }
 
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #E3A28A;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.1s;
+}
+
 .home-content p {
+    position: relative;
     color: #66473C;
     font-size: 18px;
     margin: 15px 0 25px;
 }
 
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #E3A28A;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
 .home-content .btn-box {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 345px;
     height: 50px;
+}
+
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: #E3A28A;
+    z-index: 2;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.4s;
 }
 
 .btn-box a {
@@ -211,9 +277,18 @@ body {
 }
 
 .home-image img {
-    max-width: 650px;
-    max-height: 650px;
-    margin: 0;
-    padding-left: 30px;
-    padding-top: 60px;
+    position: relative;
+    top: 15px;
+    left: 30px;
+    max-width: 1000px;
+    max-height: 1000px;
+    /* padding-top: 60px; */
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
 }
