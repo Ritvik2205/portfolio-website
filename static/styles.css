@@ -64,20 +64,40 @@ body {
     background: #F2AD94;
     animation: showRight 1s ease forwards;
     animation-delay: .3s;
-}
+} 
 
 .navbar a {
+    display: inline-block; 
     font-size: 20px;
     color: #fbf9fa;
     text-decoration: none;
     font-weight: 500;
     margin-left: 30px;
     transition: .3s;
+    opacity: 0;
+    animation: slideBottom .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));  
 }
 
 .navbar a:hover,
-.navbar a.active {
+.active {
     color: #331C14;
+}
+
+.navbar a:nth-child(1) {
+    --i: 1;
+}
+
+.navbar a:nth-child(2) {
+    --i: 2;
+}
+
+.navbar a:nth-child(3) {
+    --i: 3;
+}
+
+.navbar a:nth-child(4) {
+    --i: 4;
 }
 
 .home {
@@ -252,7 +272,26 @@ body {
     text-decoration: none;
     z-index: 1;
     overflow: hidden;
-    transition: .3s;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;  
+    animation-delay: calc(.2s * var(--i));
+}
+
+.home-link-box a:nth-child(1) {
+    --i: 7;
+}
+
+.home-link-box a:nth-child(2) {
+    --i: 8;
+}
+ 
+.home-link-box a:nth-child(3) {
+    --i: 9;
+}
+
+.home-link-box a:nth-child(4) {
+    --i: 10; 
 }
 
 .home-link-box a:hover {
@@ -280,15 +319,54 @@ body {
     position: relative;
     top: 15px;
     left: 30px;
-    max-width: 1000px;
-    max-height: 1000px;
+    max-width: 900px;
+    max-height: 900px;
     /* padding-top: 60px; */
     height: 100%;
     width: 100%;
+    opacity: 0; 
+    animation: zoomIn 1s ease forwards;  
+    animation-delay: 1.8s;
 }
 
 @keyframes showRight {
     100% {
         width: 0;
+    } 
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
     }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    } 
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    } 
 }
