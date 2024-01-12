@@ -80,6 +80,7 @@ body {
 }
 
 .navbar a:hover,
+.navbar a.active,
 .active {
     color: #331C14;
 }
