@@ -38,6 +38,7 @@
 
 body {
     background: var(--bg-color);
+    transition: background 2s;
 }
 
 #background {
@@ -128,6 +129,8 @@ body {
 .home {
     height: 100vh;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     padding: 0 5%;
 }
@@ -137,10 +140,11 @@ body {
     box-shadow: 0 4px 30px var(--glass-shadow);
     backdrop-filter: blur(6.2px);
     -webkit-backdrop-filter: blur(6.2px);
-    max-width: 600px;
+    max-width: 800px;
     padding: 30px;
     margin-top: 60px;
     border-radius: 48px;
+    flex: 5;
 }
 
 .home-content h1 {
@@ -279,6 +283,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
+    left: 48px;
     bottom: 40px;
     width: 190px;
 }
@@ -341,18 +346,42 @@ body {
     width: 100%;
 }
 
-.home-image img {
+
+.home-image {
     position: relative;
+    padding-left: 0;
+    margin: 0;
+    flex: 5;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-image:hover {
+    transform: scale(1.15) rotate(-10deg);
+}
+
+.home-image img {
+    position: static;
     top: 15px;
     left: 30px;
     max-width: 900px;
-    max-height: 900px;
-    /* padding-top: 60px; */
+    max-height: 900px; 
+    margin-top: 60px;
+    margin-left: 10px;
+    padding: 0;
     height: 100%;
     width: 100%;
     opacity: 0; 
-    animation: zoomIn 1s ease forwards;  
-    animation-delay: 1.8s;
+    animation: zoomIn 1.5s ease forwards, floatImage 2.5s ease-in-out infinite;  
+    animation-delay: 1.8s, 3.5s;
+    border-radius: 50%;
+    transition: transform 2s ease;
+}
+
+
+.home-image:hover img {
+    transform: scale(1.15) rotate(-10deg) ;
 }
 
 @keyframes showRight {
@@ -395,4 +424,17 @@ body {
         transform: scale(1);
         opacity: 1;
     } 
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-36px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
 }
