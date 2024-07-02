@@ -1,0 +1,22 @@
+<header class="header">
+    <a href="./index.html" class="logo">Ritvik</a>
+
+    <nav class="navbar">
+        <a id="index" class="navbar-child active" href="./index.html">Home</a>
+        <a id="about" class="navbar-child" href="./about.html">About</a>
+        <a id="portfolio" class="navbar-child" href="./portfolio.html">Portfolio</a>
+        <a id="contact" class="navbar-child" href="./contact.html">Contact</a>
+    </nav>
+</header>
+
+<script>
+    $(function($) {
+        var path = window.location.href; 
+        $('.navbar a').each(function() {
+            if (this.href === path) {
+                $("a").removeClass("active");
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>
